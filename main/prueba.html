@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serendipity Interior Design - Prototipo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo base usando la fuente Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Colores personalizados inspirados en el logo (ajusta según sea necesario) */
+        .brand-primary { color: #8B796E; } /* Un marrón del logo */
+        .brand-secondary { color: #A89A90; } /* Un beige/marrón más claro */
+        .bg-brand-light { background-color: #F5F3F1; } /* Un fondo crema muy claro */
+        .bg-brand-primary { background-color: #8B796E; }
+        .border-brand-primary { border-color: #8B796E; }
+        .hover\:bg-brand-dark:hover { background-color: #706055; } /* Un marrón más oscuro para hover */
+
+        /* Animación suave para scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Estilo para menú activo (opcional) */
+        .nav-link-active {
+            font-weight: 600;
+            color: #8B796E;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/150x50/F5F3F1/8B796E?text=Serendipity+Logo" alt="Logo Serendipity Interior Design" class="h-10 md:h-12">
+                </a>
+
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#inicio" class="text-gray-600 hover:brand-primary transition duration-300 nav-link-active">Inicio</a>
+                <a href="#servicios" class="text-gray-600 hover:brand-primary transition duration-300">Servicios</a>
+                <a href="#proyectos" class="text-gray-600 hover:brand-primary transition duration-300">Proyectos</a>
+                <a href="#nosotros" class="text-gray-600 hover:brand-primary transition duration-300">Nosotros</a>
+                <a href="#contacto" class="text-gray-600 hover:brand-primary transition duration-300">Contacto</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-2 absolute w-full shadow-lg">
+            <a href="#inicio" class="block px-6 py-2 text-gray-600 hover:bg-brand-light hover:brand-primary transition duration-300">Inicio</a>
+            <a href="#servicios" class="block px-6 py-2 text-gray-600 hover:bg-brand-light hover:brand-primary transition duration-300">Servicios</a>
+            <a href="#proyectos" class="block px-6 py-2 text-gray-600 hover:bg-brand-light hover:brand-primary transition duration-300">Proyectos</a>
+            <a href="#nosotros" class="block px-6 py-2 text-gray-600 hover:bg-brand-light hover:brand-primary transition duration-300">Nosotros</a>
+            <a href="#contacto" class="block px-6 py-2 text-gray-600 hover:bg-brand-light hover:brand-primary transition duration-300">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="relative h-[70vh] md:h-[85vh] bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: url('https://placehold.co/1920x1080/A89A90/FFFFFF?text=Imagen+Hero+Interiorismo');">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="relative z-10 p-6">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Transformamos Espacios, Creamos Hogares</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Diseño de interiores personalizado que refleja tu esencia y mejora tu calidad de vida.</p>
+                <a href="#contacto" class="bg-brand-primary hover:bg-brand-dark text-white font-semibold py-3 px-8 rounded-lg transition duration-300 text-lg">Conversemos</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold brand-primary text-center mb-12">Nuestros Servicios</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition duration-300">
+                        <i class="fas fa-palette text-4xl brand-primary mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Diseño Interior Integral</h3>
+                        <p class="text-gray-600 mb-4">
+                            Desde la conceptualización hasta la ejecución final, creamos proyectos completos adaptados a tus necesidades y estilo.
+                        </p>
+                        <a href="#contacto" class="text-sm brand-primary hover:underline font-medium">Saber más</a>
+                    </div>
+                    <div class="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition duration-300">
+                        <i class="fas fa-couch text-4xl brand-primary mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Asesoría Decorativa</h3>
+                        <p class="text-gray-600 mb-4">
+                            Te guiamos en la selección de mobiliario, colores, texturas e iluminación para renovar tus espacios existentes.
+                        </p>
+                        <a href="#contacto" class="text-sm brand-primary hover:underline font-medium">Saber más</a>
+                    </div>
+                    <div class="text-center p-6 border border-gray-200 rounded-lg hover:shadow-lg transition duration-300">
+                        <i class="fas fa-ruler-combined text-4xl brand-primary mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Proyectos a Medida</h3>
+                        <p class="text-gray-600 mb-4">
+                            Diseñamos y gestionamos la fabricación de muebles y elementos únicos para dar un toque exclusivo a tu hogar u oficina.
+                        </p>
+                        <a href="#contacto" class="text-sm brand-primary hover:underline font-medium">Saber más</a>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="py-16 md:py-24 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold brand-primary text-center mb-12">Proyectos Destacados</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/FFFFFF/A89A90?text=Proyecto+Residencial+1" alt="Imagen Proyecto 1" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Residencia Moderna</h3>
+                            <p class="text-sm text-gray-600">Santiago, Chile</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/FFFFFF/A89A90?text=Proyecto+Comercial+1" alt="Imagen Proyecto 2" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Oficina Boutique</h3>
+                            <p class="text-sm text-gray-600">Providencia, Chile</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                        <img src="https://placehold.co/600x400/FFFFFF/A89A90?text=Proyecto+Renovacion+1" alt="Imagen Proyecto 3" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-1">Renovación Cocina</h3>
+                            <p class="text-sm text-gray-600">Las Condes, Chile</p>
+                        </div>
+                    </div>
+                     </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="border border-brand-primary brand-primary hover:bg-brand-primary hover:text-white font-semibold py-2 px-6 rounded-lg transition duration-300">Ver Más Proyectos</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-semibold brand-primary mb-6">Sobre Serendipity</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+                    En Serendipity Interior Design, creemos que un buen diseño va más allá de la estética. Se trata de crear espacios funcionales, armoniosos y llenos de personalidad que inspiren y mejoren el día a día de quienes los habitan. Nuestra pasión es descubrir el potencial oculto de cada lugar y convertirlo en una realidad tangible.
+                </p>
+                <img src="https://placehold.co/800x500/FFFFFF/A89A90?text=Imagen+Equipo+o+Estudio" alt="Imagen sobre nosotros" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+            </div>
+        </section>
+
+        <section id="contacto" class="py-16 md:py-24 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-semibold brand-primary text-center mb-12">Hablemos de tu Proyecto</h2>
+                <div class="max-w-2xl mx-auto bg-brand-light p-8 rounded-lg shadow-md">
+                    <form action="#" method="POST"> <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent" placeholder="Tu nombre completo">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent" placeholder="tu.email@ejemplo.com">
+                        </div>
+                         <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Teléfono (Opcional)</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent" placeholder="+56 9 1234 5678">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent" placeholder="Cuéntanos sobre tu proyecto o consulta..."></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="bg-brand-primary hover:bg-brand-dark text-white font-semibold py-3 px-10 rounded-lg transition duration-300">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                     <a href="#" class="flex items-center space-x-2 mb-4">
+                        <img src="https://placehold.co/150x50/FFFFFF/8B796E?text=Serendipity+Logo" alt="Logo Serendipity Interior Design" class="h-10">
+                     </a>
+                    <p class="text-sm">
+                        Creando espacios únicos que inspiran.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Explora</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#servicios" class="hover:text-white transition duration-300">Servicios</a></li>
+                        <li class="mb-2"><a href="#proyectos" class="hover:text-white transition duration-300">Proyectos</a></li>
+                        <li class="mb-2"><a href="#nosotros" class="hover:text-white transition duration-300">Nosotros</a></li>
+                        <li class="mb-2"><a href="#contacto" class="hover:text-white transition duration-300">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contacto</h4>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt w-4 mr-2"></i> Vitacura, Santiago, Chile</p>
+                    <p class="mb-2"><i class="fas fa-phone w-4 mr-2"></i> +56 9 1234 5678</p>
+                    <p class="mb-4"><i class="fas fa-envelope w-4 mr-2"></i> hola@serendipity.cl</p>
+                    <div class="flex space-x-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-pinterest text-xl"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                &copy; <span id="current-year"></span> Serendipity Interior Design. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i'); // Icono dentro del botón
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Cambiar icono de barras a X y viceversa
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace (para páginas de una sola sección)
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Script para el año actual en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Script para resaltar enlace activo en el menú (opcional, básico)
+        const navLinks = document.querySelectorAll('nav a'); // Selecciona enlaces de nav principal y móvil
+        const sections = document.querySelectorAll('main section[id]'); // Secciones con ID
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach( section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Damos un margen para activar la sección un poco antes de llegar
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach( link => {
+                link.classList.remove('nav-link-active');
+                // Comprueba si el href del enlace (sin el #) coincide con la sección actual
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('nav-link-active');
+                }
+            });
+            // Asegurar que 'Inicio' esté activo si no hay otra sección detectada (al principio)
+             if (!current && window.pageYOffset < 200) {
+                 document.querySelector('nav a[href="#inicio"]').classList.add('nav-link-active');
+             }
+        });
+
+
+    </script>
+
+</body>
+</html>
