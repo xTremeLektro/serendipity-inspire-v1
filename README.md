@@ -1,4 +1,4 @@
-Welcome to MyWebDevelopment Repository
+Welcome to Serendipity Inspire v1 Repository
 
 Mandatory to configure repo
 git config user.name "xTremeLektro"
