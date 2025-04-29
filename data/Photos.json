@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Photo 1",
+        "url": "https://example.com/photo1.jpg",
+        "description": "This is the first photo."
+    },
+    {
+        "id": 2,
+        "title": "Photo 2",
+        "url": "https://example.com/photo2.jpg",
+        "description": "This is the second photo."
+    },
+    {
+        "id": 3,
+        "title": "Photo 3",
+        "url": "https://example.com/photo3.jpg",
+        "description": "This is the third photo."
+    }
+]

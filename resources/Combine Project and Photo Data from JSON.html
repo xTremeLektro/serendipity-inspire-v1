@@ -1,0 +1,250 @@
+<!-- Okay, here's a JavaScript solution that reads and combines data from two JSON files (projects and photos) to allow you to display project details 
+ and related images.
+
+ Code Explanation
+    1. Simulated File Fetch:
+        The mockFetch function simulates fetching data from two JSON files (projects.json and photos.json). In a real web application, you would use the 
+        fetch() API to load data from your server.
+        The simulated JSON data is included directly in the script for this example. You would replace this with actual file paths or URLs.
+    2. loadAndCombineData():
+        This async function uses mockFetch to retrieve the project and photo data.
+        It calls combineData() to merge the two datasets.
+        It calls displayProjects() to render the combined data in the HTML.
+        Includes error handling using try...catch to catch any errors during the data loading process.
+    3. combineData(projects, photos):
+        This function takes the arrays of project and photo objects as input.
+        It uses a Map to efficiently associate photos with their corresponding projects.
+        It iterates through the photos array and adds each photo to the photos array of its related project in the projectMap.
+        Finally, it returns an array of projects, where each project now has a photos property containing an array of its associated photos.
+    4. displayProjects(projects):
+        This function takes the combined array of projects (with the added photos property) and generates the HTML to display the data.
+        It iterates through the projects and creates HTML elements (divs, images, headings, etc.) to display the project information and its associated photos.
+        It appends the generated HTML to the content div in the HTML document.
+    5. CSS Styling:
+        The <style> section provides basic CSS styling for the project display, including layout, borders, images, and spacing.
+ 
+Key Improvements and Considerations:
+    Clearer Data Structures: The code uses more descriptive variable names and comments to explain the structure of the data at each step.
+    Modular Design: The code is broken down into smaller, more manageable functions (combineData, displayProjects) to improve readability and maintainability.
+    Error Handling: The loadAndCombineData function includes error handling to gracefully handle cases where the data loading fails.
+    Dynamic HTML Generation: The displayProjects function dynamically generates the HTML content based on the data, making the code more flexible and easier 
+    to update.
+    Use of Map for Efficiency: The combineData function uses a Map to efficiently associate photos with projects, which is faster than using nested loops 
+    for large datasets.
+    Modern JavaScript: The code uses modern JavaScript features like async/await, fetch(), and arrow functions for improved code clarity and efficiency.
+    Thumbnail and Full Image Links: The code assumes that each photo has both a thumbnail (thumb) and a full-size image (full) URL, which is a common pattern 
+    for image galleries.
+
+ This enhanced example provides a more robust and efficient solution for combining and displaying your project and photo data.  Remember to replace the 
+ simulated mockFetch with actual fetch calls to load data from your JSON files in a real-world scenario.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design Project Viewer</title>
+    <script>
+        // Simulate file loading (in a real environment, you'd use fetch() or similar)
+        const mockFetch = (url) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (url === 'projects.json') {
+                        resolve({
+                            json: () => Promise.resolve([
+                                { "projectID": 1, "name": "Modern Loft", "description": "Sleek and minimalist design.", "mainPicture": "modern-loft-main.jpg" },
+                                { "projectID": 2, "name": "Cozy Cottage", "description": "Warm and inviting space.", "mainPicture": "cozy-cottage-main.jpg" },
+                                { "projectID": 3, "name": "Urban Chic Apartment", "description": "Stylish and trendy design.", "mainPicture": "urban-chic-main.jpg" },
+                                { "projectID": 4, "name": "Rustic Farmhouse", "description": "Earthy tones and natural materials.", "mainPicture": "rustic-farmhouse-main.jpg" },
+                                { "projectID": 5, "name": "Elegant Villa", "description": "Luxurious and sophisticated design.", "mainPicture": "elegant-villa-main.jpg" },
+                                { "projectID": 6, "name": "Industrial Loft", "description": "Raw and edgy design.", "mainPicture": "industrial-loft-main.jpg" },
+                                { "projectID": 7, "name": "Beachfront House", "description": "Bright and airy coastal design.", "mainPicture": "beachfront-house-main.jpg" },
+                                { "projectID": 8, "name": "Mountain Cabin", "description": "Cozy and rustic retreat.", "mainPicture": "mountain-cabin-main.jpg" },
+                                { "projectID": 9, "name": "Classic Townhouse", "description": "Timeless and traditional design.", "mainPicture": "classic-townhouse-main.jpg" },
+                                { "projectID": 10, "name": "Bohemian Studio", "description": "Eclectic and colorful design.", "mainPicture": "bohemian-studio-main.jpg" }
+                            ])
+                        });
+                    } else if (url === 'photos.json') {
+                        resolve({
+                            json: () => Promise.resolve([
+                                { "photoID": 1, "name": "Living Room", "thumb": "modern-loft-living-thumb.jpg", "full": "modern-loft-living-full.jpg", "projectID": 1 },
+                                { "photoID": 2, "name": "Bedroom", "thumb": "modern-loft-bedroom-thumb.jpg", "full": "modern-loft-bedroom-full.jpg", "projectID": 1 },
+                                { "photoID": 3, "name": "Kitchen", "thumb": "modern-loft-kitchen-thumb.jpg", "full": "modern-loft-kitchen-full.jpg", "projectID": 1 },
+                                { "photoID": 4, "name": "Exterior", "thumb": "cozy-cottage-exterior-thumb.jpg", "full": "cozy-cottage-exterior-full.jpg", "projectID": 2 },
+                                { "photoID": 5, "name": "Interior", "thumb": "cozy-cottage-interior-thumb.jpg", "full": "cozy-cottage-interior-full.jpg", "projectID": 2 },
+                                { "photoID": 6, "name": "Living Area", "thumb": "urban-chic-living-thumb.jpg", "full": "urban-chic-living-full.jpg", "projectID": 3 },
+                                { "photoID": 7, "name": "Dining Area", "thumb": "urban-chic-dining-thumb.jpg", "full": "urban-chic-dining-full.jpg", "projectID": 3 },
+                                { "photoID": 8, "name": "Bedroom", "thumb": "urban-chic-bedroom-thumb.jpg", "full": "urban-chic-bedroom-full.jpg", "projectID": 3 },
+                                { "photoID": 9, "name": "Front View", "thumb": "rustic-farmhouse-front-thumb.jpg", "full": "rustic-farmhouse-front-full.jpg", "projectID": 4 },
+                                { "photoID": 10, "name": "Living Room", "thumb": "rustic-farmhouse-living-thumb.jpg", "full": "rustic-farmhouse-living-full.jpg", "projectID": 4 },
+                                { "photoID": 11, "name": "Dining Room", "thumb": "elegant-villa-dining-thumb.jpg", "full": "elegant-villa-dining-full.jpg", "projectID": 5 },
+                                { "photoID": 12, "name": "Garden", "thumb": "elegant-villa-garden-thumb.jpg", "full": "elegant-villa-garden-full.jpg", "projectID": 5 },
+                                { "photoID": 13, "name": "Living Room", "thumb": "industrial-loft-living-thumb.jpg", "full": "industrial-loft-living-full.jpg", "projectID": 6 },
+                                { "photoID": 14, "name": "Bedroom", "thumb": "industrial-loft-bedroom-thumb.jpg", "full": "industrial-loft-bedroom-full.jpg", "projectID": 6 },
+                                { "photoID": 15, "name": "Exterior", "thumb": "beachfront-house-exterior-thumb.jpg", "full": "beachfront-house-exterior-full.jpg", "projectID": 7 },
+                                { "photoID": 16, "name": "Living Room", "thumb": "beachfront-house-living-thumb.jpg", "full": "beachfront-house-living-full.jpg", "projectID": 7 },
+                                { "photoID": 17, "name": "Front View", "thumb": "mountain-cabin-front-thumb.jpg", "full": "mountain-cabin-front-full.jpg", "projectID": 8 },
+                                { "photoID": 18, "name": "Interior", "thumb": "mountain-cabin-interior-thumb.jpg", "full": "mountain-cabin-interior-full.jpg", "projectID": 8 },
+                                { "photoID": 19, "name": "Living Room", "thumb": "classic-townhouse-living-thumb.jpg", "full": "classic-townhouse-living-full.jpg", "projectID": 9 },
+                                { "photoID": 20, "name": "Dining Room", "thumb": "classic-townhouse-dining-thumb.jpg", "full": "classic-townhouse-dining-full.jpg", "projectID": 9 },
+                                { "photoID": 21, "name": "Main Room", "thumb": "bohemian-studio-main-thumb.jpg", "full": "bohemian-studio-main-full.jpg", "projectID": 10 },
+                                { "photoID": 22, "name": "Detail", "thumb": "bohemian-studio-detail-thumb.jpg", "full": "bohemian-studio-detail-full.jpg", "projectID": 10 }
+                            ])
+                        });
+                    } else {
+                        reject(new Error(`Failed to fetch: ${url}`));
+                    }
+                }, 500); // Simulate network latency
+            });
+        };
+
+        async function loadAndCombineData() {
+            try {
+                const projectsResponse = await mockFetch('projects.json');
+                const projectsData = await projectsResponse.json();
+
+                const photosResponse = await mockFetch('photos.json');
+                const photosData = await photosResponse.json();
+
+                const combinedData = combineData(projectsData, photosData);
+                displayProjects(combinedData); // Call function to display the combined data
+            } catch (error) {
+                console.error("Error loading data:", error);
+                // Display error message to the user
+                document.getElementById('content').innerHTML = `<p style="color: red;">Failed to load data: ${error.message}</p>`;
+            }
+        }
+
+
+        /**
+         * Combines project and photo data.
+         *
+         * Parameters:
+         * - projects (array): Array of project objects.
+         * - photos (array): Array of photo objects.
+         *
+         * Returns:
+         * - array: An array of project objects, where each project object
+         * has an additional 'photos' property containing the related photos.
+         */
+        function combineData(projects, photos) {
+            const projectMap = new Map();
+            projects.forEach(project => {
+                projectMap.set(project.projectID, { ...project, photos: [] });
+            });
+
+            photos.forEach(photo => {
+                const project = projectMap.get(photo.projectID);
+                if (project) {
+                    project.photos.push(photo);
+                }
+            });
+
+            return Array.from(projectMap.values());
+        }
+
+        /**
+         * Displays the combined project data in the DOM.
+         *
+         * @param {array} projects - Array of project objects, each with a 'photos' property.
+         */
+        function displayProjects(projects) {
+            const container = document.getElementById('content');
+            container.innerHTML = ''; // Clear previous content
+
+            projects.forEach(project => {
+                const projectDiv = document.createElement('div');
+                projectDiv.classList.add('project');
+
+                const mainPicture = document.createElement('img');
+                mainPicture.src = project.mainPicture; //  Use the file name
+                mainPicture.alt = project.name;
+                mainPicture.classList.add('main-picture');
+
+                const projectInfo = document.createElement('div');
+                projectInfo.classList.add('project-info');
+
+                const projectName = document.createElement('h2');
+                projectName.textContent = project.name;
+
+                const projectDescription = document.createElement('p');
+                projectDescription.textContent = project.description;
+
+                const photosTitle = document.createElement('h3');
+                photosTitle.textContent = 'Related Photos';
+
+                const photosDiv = document.createElement('div');
+                photosDiv.classList.add('photos');
+
+                project.photos.forEach(photo => {
+                    const photoLink = document.createElement('a');
+                    photoLink.href = photo.full;  // Use the full-size image link
+                    photoLink.target = '_blank'; // Open in a new tab
+
+                    const photoThumb = document.createElement('img');
+                    photoThumb.src = photo.thumb; // Use the thumbnail image link
+                    photoThumb.alt = photo.name;
+                    photoThumb.classList.add('photo-thumb');
+
+                    photoLink.appendChild(photoThumb);
+                    photosDiv.appendChild(photoLink);
+                });
+
+                projectInfo.appendChild(projectName);
+                projectInfo.appendChild(projectDescription);
+                projectInfo.appendChild(photosTitle);
+                projectInfo.appendChild(photosDiv);
+
+                projectDiv.appendChild(mainPicture);
+                projectDiv.appendChild(projectInfo);
+                container.appendChild(projectDiv);
+            });
+        }
+
+        // Call the main function to start the process
+        document.addEventListener('DOMContentLoaded', loadAndCombineData);
+    </script>
+    <style>
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .project {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .main-picture {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .project-info {
+            margin-top: 10px;
+        }
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .photo-thumb {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .photo-thumb:hover {
+           border: 2px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        </div>
+</body>
+</html>
