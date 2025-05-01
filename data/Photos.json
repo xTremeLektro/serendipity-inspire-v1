@@ -2,18 +2,61 @@
     {
         "id": 1,
         "projectID": 4,
-        "url": "../imagenes/Ideas 1/Thumb/IMG_3992_thumb.JPG"
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_3992_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_3992.JPG"
     },
     {
         "id": 2,
-        "title": "Photo 2",
-        "url": "https://example.com/photo2.jpg",
-        "description": "This is the second photo."
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4021_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4021.JPG"
     },
     {
         "id": 3,
-        "title": "Photo 3",
-        "url": "https://example.com/photo3.jpg",
-        "description": "This is the third photo."
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4022_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4022.JPG"
+    },
+    {
+        "id": 4,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4023_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4023.JPG"
+    },
+    {
+        "id": 5,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4024_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4024.JPG"
+    },
+    {
+        "id": 6,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4025_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4025.JPG"
+    },
+    {
+        "id": 7,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4026_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4026.JPG"
+    },
+    {
+        "id": 8,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4027_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4027.JPG"
+    },
+    {
+        "id": 9,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4028_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4028.JPG"
+    },
+    {
+        "id": 10,
+        "projectID": 4,
+        "urlThumb": "../imagenes/Ideas 1/Thumb/IMG_4029_thumb.JPG",
+        "urlFull": "../imagenes/Ideas 1/FullPic/IMG_4029.JPG"
     }
 ]
