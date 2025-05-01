@@ -1,0 +1,20 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* Colores personalizados inspirados en el logo (ajusta según sea necesario) */
+.brand-primary { color: #8B796E; } /* Un marrón del logo */
+.brand-secondary { color: #A89A90; } /* Un beige/marrón más claro */
+.bg-brand-light { background-color: #F5F3F1; } /* Un fondo crema muy claro */
+.bg-brand-primary { background-color: #8B796E; }
+.border-brand-primary { border-color: #8B796E; }
+.hover\:bg-brand-dark:hover { background-color: #706055; } /* Un marrón más oscuro para hover */
+
+/* Animación suave para scroll */
+html {
+    scroll-behavior: smooth;
+}
+/* Estilo para menú activo (opcional) */
+.nav-link-active {
+    font-weight: 600;
+    color: #8B796E;
+}
