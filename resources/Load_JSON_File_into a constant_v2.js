@@ -26,7 +26,7 @@ function readJSON(JSONPATH) {
     });
 }
 
-readJSON('../Data/Photos.json')
+readJSON('../Data/SalesMaterial.json')
     .then(data => {
         console.log("Data from readJSON:", data);
         console.log("Global jsonDataGlobal inside .then():", jsonDataGlobal); //check the value
@@ -45,10 +45,9 @@ function useJSONData() {
     if (jsonDataGlobal) {
         console.log("Using jsonDataGlobal:", jsonDataGlobal);
         if (jsonDataGlobal.length > 0) {
-            console.log("Photo ID:", jsonDataGlobal[0].id);
-            console.log("Project ID:", jsonDataGlobal[0].projectID)
-            console.log("Thumbnail:", jsonDataGlobal[0].urlThumb)
-            console.log("Photo:", jsonDataGlobal[0].urlFull);
+            console.log("ID:", jsonDataGlobal[0].id);
+            console.log("Group:", jsonDataGlobal[0].group)
+            console.log("url:", jsonDataGlobal[0].url)
             ;
         }        //  use jsonDataGlobal here
     } else {
