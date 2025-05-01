@@ -1,9 +1,8 @@
 [
     {
         "id": 1,
-        "title": "Photo 1",
-        "url": "https://example.com/photo1.jpg",
-        "description": "This is the first photo."
+        "projectID": 4,
+        "url": "../imagenes/Ideas 1/Thumb/IMG_3992_thumb.JPG"
     },
     {
         "id": 2,
