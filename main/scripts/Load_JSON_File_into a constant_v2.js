@@ -5,7 +5,9 @@ let jsonDataGlobal; // Declare jsonDataGlobal in the global scope
 
 function readJSON(JSONPATH) {
     return new Promise((resolve, reject) => {
+        console.log("Reading JSON file from path:", __dirname, JSONPATH);
         const filePath = path.join(__dirname, JSONPATH);
+        console.log(filePath);
 
         fs.readFile(filePath, 'utf8', (err, data) => {
             if (err) {
@@ -26,7 +28,7 @@ function readJSON(JSONPATH) {
     });
 }
 
-readJSON('../Data/SalesMaterial.json')
+readJSON('../data/Projects.json')
     .then(data => {
         console.log("Data from readJSON:", data);
         console.log("Global jsonDataGlobal inside .then():", jsonDataGlobal); //check the value
@@ -46,9 +48,8 @@ function useJSONData() {
         console.log("Using jsonDataGlobal:", jsonDataGlobal);
         if (jsonDataGlobal.length > 0) {
             console.log("ID:", jsonDataGlobal[0].id);
-            console.log("Group:", jsonDataGlobal[0].group)
-            console.log("url:", jsonDataGlobal[0].url)
-            ;
+            console.log("IsHomepage:", jsonDataGlobal[0].isHomepage);
+            console.log("Fecha:", jsonDataGlobal[0].date);
         }        //  use jsonDataGlobal here
     } else {
         console.warn("jsonDataGlobal is not yet available.");

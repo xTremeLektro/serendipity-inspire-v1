@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="mainAddlStyle.css">
+    <link rel="stylesheet" href="/main/styles/mainAddlStyle.css">
 </head>
 
 <body class="bg-white text-gray-700">
@@ -95,22 +95,22 @@
         <section id="proyectos" class="py-16 md:py-24 bg-brand-light">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-semibold brand-primary text-center mb-12">Proyectos Destacados</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                <div class="project-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="project bg-white rounded-lg shadow-md overflow-hidden group">
                         <img src="https://placehold.co/600x400/FFFFFF/A89A90?text=Proyecto+Residencial+1" alt="Imagen Proyecto 1" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-gray-800 mb-1">Proyecto 1</h3>
                             <p class="text-sm text-gray-600">Santiago, Chile</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="project bg-white rounded-lg shadow-md overflow-hidden group">
                         <img src="https://placehold.co/600x400/FFFFFF/A89A90?text=Proyecto+Comercial+1" alt="Imagen Proyecto 2" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-gray-800 mb-1">Proyecto 2</h3>
                             <p class="text-sm text-gray-600">Providencia, Chile</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                    <div class="project bg-white rounded-lg shadow-md overflow-hidden group">
                         <img src="https://placehold.co/600x400/FFFFFF/A89A90?text=Proyecto+Renovacion+1" alt="Imagen Proyecto 3" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-gray-800 mb-1">Proyecto 3</h3>
@@ -124,12 +124,12 @@
             </div>
         </section>
 
-        <section id="ideas" class="py-16 md:py-24 bg-brand-light">
+        <section id="ideas" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-semibold brand-primary text-center mb-12">Ideas Destacadas</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img src="../imagenes/Ideas 1/Thumb/IMG_4022_thumb.JPG" alt="Imagen Idea 1" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
+                        <img src="../imagenes/Ideas 1/071.JPG" alt="Imagen Idea 1" class="w-full h-64 object-cover group-hover:scale-105 transition duration-300">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-gray-800 mb-1">Diseños de Comedor</h3>
                             <p class="text-sm text-gray-600">Múltiples Opciones</p>
@@ -194,7 +194,7 @@
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
                     En Serendipity Interior Design, creemos que un buen diseño va más allá de la estética. Se trata de crear espacios funcionales, armoniosos y llenos de personalidad que inspiren y mejoren el día a día de quienes los habitan. Nuestra pasión es descubrir el potencial oculto de cada lugar y convertirlo en una realidad tangible.
                 </p>
-                <img src="../imagenes/download.png" alt="Imagen sobre nosotros" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
+                <img src="../imagenes/download2.png" alt="Imagen sobre nosotros" class="mx-auto rounded-lg shadow-md max-w-full h-auto">
             </div>
         </section>
 
@@ -270,67 +270,9 @@
         </div>
     </footer>
 
-    <script>
-        // Script para el menú móvil
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuIcon = mobileMenuButton.querySelector('i'); // Icono dentro del botón
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            // Cambiar icono de barras a X y viceversa
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            } else {
-                mobileMenuIcon.classList.remove('fa-bars');
-                mobileMenuIcon.classList.add('fa-times');
-            }
-        });
-
-        // Cerrar menú móvil al hacer clic en un enlace (para páginas de una sola sección)
-        const mobileNavLinks = mobileMenu.querySelectorAll('a');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.classList.remove('fa-times');
-                mobileMenuIcon.classList.add('fa-bars');
-            });
-        });
-
-        // Script para el año actual en el footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Script para resaltar enlace activo en el menú (opcional, básico)
-        const navLinks = document.querySelectorAll('nav a'); // Selecciona enlaces de nav principal y móvil
-        const sections = document.querySelectorAll('main section[id]'); // Secciones con ID
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach( section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                // Damos un margen para activar la sección un poco antes de llegar
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach( link => {
-                link.classList.remove('nav-link-active');
-                // Comprueba si el href del enlace (sin el #) coincide con la sección actual
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('nav-link-active');
-                }
-            });
-            // Asegurar que 'Inicio' esté activo si no hay otra sección detectada (al principio)
-             if (!current && window.pageYOffset < 200) {
-                 document.querySelector('nav a[href="#inicio"]').classList.add('nav-link-active');
-             }
-        });
-
-
-    </script>
+    <script src="/main/scripts/main.js"></script>
+    <script src="/main/scripts/Load_JSON_File_into a constant_v2.js"></script>
+    <script src="/main/scripts/mainlogic.js"></script>
 
 </body>
 </html>

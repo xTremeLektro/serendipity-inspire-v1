@@ -1,0 +1,1 @@
+useJSONData(); // Call the function to use jsonDataGlobal
