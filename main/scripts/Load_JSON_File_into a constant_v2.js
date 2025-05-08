@@ -5,9 +5,7 @@ let jsonDataGlobal; // Declare jsonDataGlobal in the global scope
 
 function readJSON(JSONPATH) {
     return new Promise((resolve, reject) => {
-        console.log("Reading JSON file from path:", __dirname, JSONPATH);
         const filePath = path.join(__dirname, JSONPATH);
-        console.log(filePath);
 
         fs.readFile(filePath, 'utf8', (err, data) => {
             if (err) {
@@ -28,7 +26,7 @@ function readJSON(JSONPATH) {
     });
 }
 
-readJSON('../data/Projects.json')
+readJSON('../../data/Projects.json')
     .then(data => {
         console.log("Data from readJSON:", data);
         console.log("Global jsonDataGlobal inside .then():", jsonDataGlobal); //check the value

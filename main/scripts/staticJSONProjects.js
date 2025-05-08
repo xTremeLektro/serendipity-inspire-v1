@@ -1,3 +1,4 @@
+let mainProjects = `
 [
     {
         "id": 1,
@@ -6,7 +7,7 @@
         "description": "Description of Project A",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 2,
@@ -15,7 +16,7 @@
         "description": "Description of Project B",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 3,
@@ -24,7 +25,7 @@
         "description": "Description of Project C",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 4,
@@ -42,7 +43,7 @@
         "description": "Description of Idea B",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 6,
@@ -51,7 +52,7 @@
         "description": "Description of Idea C",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 7,
@@ -60,7 +61,7 @@
         "description": "Description of Lugar A",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 8,
@@ -69,7 +70,7 @@
         "description": "Description of Lugar B",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     },
     {
         "id": 9,
@@ -78,6 +79,8 @@
         "description": "Description of Lugar C",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
+        "homeThumb": ""
     }
-]
+]`;
+
+
