@@ -1,7 +1,8 @@
 [
     {
         "id": 1,
-        "name": "Project A",
+        "name": "Casa de Playa",
+        "place": "La Pedrera, Uruguay",
         "type": "Project",
         "description": "Description of Project A",
         "date": "2023-01-01",
@@ -10,7 +11,8 @@
     },
     {
         "id": 2,
-        "name": "Project B",
+        "name": "Departamento Nordelta",
+        "place": "Tigre, Argentina",
         "type": "Project",
         "description": "Description of Project B",
         "date": "2023-01-01",
@@ -19,7 +21,8 @@
     },
     {
         "id": 3,
-        "name": "Project C",
+        "name": "Comedor Vitacura",
+        "place": "Santiago, Chile",
         "type": "Project",
         "description": "Description of Project C",
         "date": "2023-01-01",
@@ -28,7 +31,8 @@
     },
     {
         "id": 4,
-        "name": "Idea A",
+        "name": "Mesas de Comedor",
+        "place": "Ideas Variadas",
         "type": "Idea",
         "description": "Description of Idea A",
         "date": "2023-01-01",
@@ -38,6 +42,7 @@
     {
         "id": 5,
         "name": "Idea B",
+        "place": "Ideas Variadas",
         "type": "Idea",
         "description": "Description of Idea B",
         "date": "2023-01-01",
@@ -47,6 +52,7 @@
     {
         "id": 6,
         "name": "Idea C",
+        "place": "Ideas Variadas",
         "type": "Idea",
         "description": "Description of Idea C",
         "date": "2023-01-01",
@@ -55,8 +61,8 @@
     },
     {
         "id": 7,
-        "name": "Lugar A",
-        "type": "Lugar",
+        "name": "Experiencia Rural",
+        "type": "El Maule, Chile",
         "description": "Description of Lugar A",
         "date": "2023-01-01",
         "isHomepage": true,
@@ -64,8 +70,8 @@
     },
     {
         "id": 8,
-        "name": "Lugar B",
-        "type": "Lugar",
+        "name": "Algodón Wine State",
+        "type": "San Rafael, Mendoza",
         "description": "Description of Lugar B",
         "date": "2023-01-01",
         "isHomepage": true,
@@ -73,8 +79,8 @@
     },
     {
         "id": 9,
-        "name": "Lugar C",
-        "type": "Lugar",
+        "name": "El Norte",
+        "type": "Antofagasta, Chile",
         "description": "Description of Lugar C",
         "date": "2023-01-01",
         "isHomepage": true,

@@ -2,85 +2,92 @@ let mainProjects = `
 [
     {
         "id": 1,
-        "name": "Project A",
+        "name": "Casa de Playa",
+        "place": "La Pedrera, Uruguay",
         "type": "Project",
         "description": "Description of Project A",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 2,
-        "name": "Project B",
+        "name": "Departamento Nordelta",
+        "place": "Tigre, Argentina",
         "type": "Project",
         "description": "Description of Project B",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 3,
-        "name": "Project C",
+        "name": "Comedor Vitacura",
+        "place": "Santiago, Chile",
         "type": "Project",
         "description": "Description of Project C",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 4,
-        "name": "Idea A",
+        "name": "Mesas de Comedor",
+        "place": "Ideas Variadas",
         "type": "Idea",
         "description": "Description of Idea A",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "../imagenes/IMG_4022_thumb.jpg"
+        "homeThumb": "../../imagenes/Ideas1/Thumb/IMG_4022_thumb.JPG"
     },
     {
         "id": 5,
-        "name": "Idea B",
+        "name": "Cocinas Mágicas",
+        "place": "Ideas Variadas",
         "type": "Idea",
         "description": "Description of Idea B",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 6,
-        "name": "Idea C",
+        "name": "Baños de Ensueño",
+        "place": "Ideas Variadas",
         "type": "Idea",
         "description": "Description of Idea C",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 7,
-        "name": "Lugar A",
+        "name": "Experiencia Rural",
+        "place": "El Maule, Chile",
         "type": "Lugar",
         "description": "Description of Lugar A",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 8,
-        "name": "Lugar B",
+        "name": "Algodón Wine State",
+        "place": "San Rafael, Mendoza",
         "type": "Lugar",
         "description": "Description of Lugar B",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     },
     {
         "id": 9,
-        "name": "Lugar C",
+        "name": "El Norte",
+        "place": "Antofagasta, Chile",
         "type": "Lugar",
         "description": "Description of Lugar C",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": ""
+        "homeThumb": "https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible"
     }
 ]`;
-
-
