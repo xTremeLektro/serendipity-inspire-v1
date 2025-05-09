@@ -38,7 +38,7 @@ let mainProjects = `
         "description": "Description of Idea A",
         "date": "2023-01-01",
         "isHomepage": true,
-        "homeThumb": "../../imagenes/Ideas1/Thumb/IMG_4022_thumb.JPG"
+        "homeThumb": "../../imagenes/Ideas 1/Thumb/IMG_4022_thumb.JPG"
     },
     {
         "id": 5,
