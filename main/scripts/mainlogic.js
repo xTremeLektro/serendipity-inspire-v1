@@ -31,7 +31,8 @@ function crearProyectoDOM(proyecto) {
     const imagenProyecto = document.createElement('img');
     imagenProyecto.src = proyecto.homeThumb || 'https://placehold.co/600x400/FFFFFF/A89A90?text=Imagen+No+Disponible'; // Usar una URL por defecto si no hay imagen
     imagenProyecto.alt = proyecto.name ? `Imagen Proyecto ${proyecto.name}` : 'Imagen del Proyecto';
-    imagenProyecto.className = 'w-full h-64 object-cover group-hover:scale-105 transition duration-300';
+    imagenProyecto.className = 'w-full max-w-xl h-auto object-cover group-hover:scale-105 transition duration-300';
+    // imagenProyecto.className = 'w-full h-64 object-cover group-hover:scale-105 transition duration-300';
   
     // Crear el contenedor de la información del proyecto
     const infoDiv = document.createElement('div');
